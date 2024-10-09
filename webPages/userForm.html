@@ -1,0 +1,41 @@
+{{define "userForm"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/webPages/style.css">
+</head>
+<body>
+    <h1 class="centred">Formulaire d'inscription</h1>
+    <form class="centred" action="/user/treatment" method="POST"> 
+        <h3 class="centred">Nom:</h3>
+        <input type="text" name="nom" size="20" autocapitalize="off" autofocus="on" required value="{{.Nom}}" oninput="document.getElementById('chosenValue').innerText = this.value;"/>
+        <h3 class="centred">Prenom:</h3>
+        <input type="text" name="prenom" size="20" autocapitalize="off" autofocus="on" required value="{{.Prenom}}" oninput="document.getElementById('chosenValue').innerText = this.value;"/> 
+        <h3 class="centred">Date:</h3>
+        <input type="date" name="dateNaissance" size="20" autocapitalize="off" autofocus="on" required value="{{.DateNaissance}}" oninput="document.getElementById('chosenValue').innerText = this.value;"/>
+        <h3 class="centred">Sexe:</h3>
+        <select id="sexe" name="sexe" required>
+            <option value="M" {{if eq .Sexe "M"}}selected{{end}}>Homme</option>
+            <option value="F" {{if eq .Sexe "F"}}selected{{end}}>Femme</option>
+            <option value="O" {{if eq .Sexe "O"}}selected{{end}}>Autre</option>
+        </select>
+        <br>
+        <br>
+        <button class="TitleButton" role="button">Envoyer</button>
+        <br>
+        <br>
+    </form>
+    
+    <form class="centred" action="/promo" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour voir la promo</button>
+    </form>
+    <form class="centred" action="/" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour aller a l'index</button>
+    </form>
+    <form class="centred" action="/change" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour voir le compteur de vues</button>
+    </form>
+</html>
+{{end}}

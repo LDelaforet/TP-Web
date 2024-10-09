@@ -1,0 +1,20 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TP-WEB</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="webPages/style.css">
+</head>
+<body>
+    <form class="centred" action="/promo" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour voir la promo</button>
+    </form>
+    <form class="centred" action="/change" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour voir le compteur de vues</button>
+    </form>
+    <form class="centred" action="/user/form" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour voir la page d'inscription</button>
+    </form>
+</html>
+{{end}}

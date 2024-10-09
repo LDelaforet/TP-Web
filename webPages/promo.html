@@ -1,0 +1,66 @@
+{{define "promoDisplay"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue de la promotion {{.Nom}}</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="webPages/style.css">
+</head>
+<body>
+    <h1 class="centred">{{.Nom}}</h1>
+    <p class="centred">Filière: {{.Filiere}}</p>
+    <p class="centred">Niveau: {{.Niveau}}</p>
+    <p class="centred">Nombre d'étudiants: {{.NbEtudiants}}</p>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Age</th>
+            <th>Sexe</th>
+        </tr>
+        {{range .Etudiants}}
+        <tr>
+            <td>{{.Nom}}</td>
+            <td>{{.Prenom}}</td>
+            <td>{{.Age}}</td>
+            <td>
+                {{if eq .Sexe "F"}}
+                    <img src="Pictures/female.png" alt="Female">
+                {{else if eq .Sexe "M"}}
+                    <img src="Pictures/male.png" alt="Male">
+                {{else}}
+                    {{.Sexe}}
+                {{end}}
+            </td>
+        </tr>
+        {{end}}
+    </table>
+    <form class="centred" action="/" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour aller a l'index</button>
+    </form>
+    <form class="centred" action="/change" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour voir le compteur de vues</button>
+    </form>
+    <form class="centred" action="/user/form" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour voir la page d'inscription</button>
+    </form>
+</body>
+</html>
+{{end}}
+
+<!--
+    StudentList = append(StudentList, Etudiant{
+		Nom:    "Rodrigues",
+		Prenom: "Cyril",
+		Age:    22,
+		Sexe:   "Masculin",
+	})
+
+	Promo1 := Promotion{
+		Nom:         "MENTOR",
+		Filiere:     "Informatique",
+		Niveau:      "Mentors",
+		NbEtudiants: 2,
+		Etudiants:   StudentList,
+	}
+-->

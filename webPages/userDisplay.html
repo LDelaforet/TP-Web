@@ -1,0 +1,33 @@
+{{define "userDisplay"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/webPages/style.css">
+</head>
+<body>
+    <h1 class="centred">Formulaire présenté</h1>
+    <h2>Nom:</h2>
+    <h4>{{.Nom}}</h4>
+    <h2>Prenom:</h2>
+    <h4>{{.Prenom}}</h4>
+    <h2>Date de naissance:</h2>
+    <h4>{{.DateNaissance}}</h4>
+    <h2>Sexe:</h2>
+    <h4>{{if eq .Sexe "M"}}Homme{{end}} {{if eq .Sexe "F"}}Femme{{end}} {{if eq .Sexe "O"}}Autre{{end}}</h4>
+    
+    <form class="centred" action="/promo" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour voir la promo</button>
+    </form>
+    <form class="centred" action="/" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour aller a l'index</button>
+    </form>
+    <form class="centred" action="/change" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour voir le compteur de vues</button>
+    </form>
+    <form class="centred" action="/user/form" method="POST">
+        <button type="submit" class="TitleButton">Cliquez ici pour voir la page d'inscription</button>
+    </form>
+</html>
+{{end}}
