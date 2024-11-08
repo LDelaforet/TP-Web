@@ -1,29 +1,38 @@
+{{define "productData"}}
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="productDataStyles.css">
-    <link rel="stylesheet" href="titlebarStyles.css">
-    <link rel="stylesheet" href="styles.css">
-    <title>Home</title>
+    <link rel="stylesheet" href="/styles/productDataStyles.css">
+    <link rel="stylesheet" href="/styles/titlebarStyles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>{{.Nom}}</title>
 </head>
 <body>
     <div class="titleBar">
         <div class="titlebarButtonsContainer">
-            <button class="titlebarButton">Produits</button>
-            <button class="titlebarButton">Gestion</button>
+            <button class="titlebarButton" id="titleBar_Index" onclick="window.location.href='/'">Produits</button>
+            <button class="titlebarButton" id="titleBar_productMgmt" onclick="window.location.href='/productMgmt'">Gestion</button>
         </div>
-        <img src="logo.png" alt="Logo">
+
+        <img src="/images/logo/1.png" alt="Logo">
     </div>
     <div class="productDiv">
-        <img class="productImage" src="placeholder.png" alt="Produit 1">
+        <img class="productImage" src="/images/products/{{.ImageName}}" alt="Produit">
         <div class="productInfo">
-            <p class="productName">Lorem ipsum dolor</p>
-            <p class="productSize">Tailles disponibles: L | XL</p>
-            <p class="productDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc.</p>
+            <p class="productName">{{.Nom}}</p>
+            <p class="productSize">Tailles disponibles: | {{range .TaillesDisponibles}}{{.Taille}} | {{end}}</p>
+            <p class="productDescription">{{.Description}}</p>
             <div class="productPriceNInfo">
-                <p class="price">1€</p>
-                <button class="addToCartButton" id="product_1">Ajouter au panier</button>
+                <div class="price-div">
+                    <!--Jsp si la condition dans la class c'est horrible ou un coup de génie mais je refuse de croire que c'est comme ca qu'on est sensé faire-->
+                    <p class="price{{if ne .Reduction "0"}}Reduc{{end}}">{{.Prix}}</p> 
+                    {{if ne .Reduction "0"}}
+                    <p class="reduction">{{.Reduction}}</p>
+                    {{end}}
+                </div>
+                <button class="addToCartButton">Ajouter au panier</button>
             </div>
         </div>
     </div>
 </body>
 </html>
+{{end}}

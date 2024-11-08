@@ -10,7 +10,7 @@ body {
     background-color: #fff;
 }
 
-/* Div qui contient le form d'in */
+/* Div qui contient le form d'ajout */
 .productFormDiv {
     border: 0.5vmin solid black;
     border-radius: 2vmin;
@@ -29,6 +29,16 @@ body {
     font-family: "Helvetica";
     font-weight: bold;
     font-size: 4vmin;
+}
+
+/* Si y'a une erreur dans le form */
+.error {
+    font-size: 4vmin;
+    margin-bottom: 3vmin;
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 4vmin;
+    color: red;
 }
 
 /* Le form d'input de produit' */

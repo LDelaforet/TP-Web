@@ -1,388 +1,49 @@
+{{define "productList"}}
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="productListStyles.css">
-    <link rel="stylesheet" href="titlebarStyles.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles/productListStyles.css">
+    <link rel="stylesheet" href="/styles/titlebarStyles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
     <title>Home</title>
 </head>
 <body>
     <div class="titleBar">
         <div class="titlebarButtonsContainer">
-            <button class="titlebarButton" id="titleBar_Index" >Produits</button>
-            <button class="titlebarButton" id="titleBar_productMgmt" >Gestion</button>
+            <button class="titlebarButton" id="titleBar_Index" onclick="window.location.href='/'">Produits</button>
+            <button class="titlebarButton" id="titleBar_productMgmt" onclick="window.location.href='/productMgmt'">Gestion</button>
         </div>
 
-        <img src="logo.png" alt="Logo">
+        <img src="/images/logo/1.png" alt="Logo">
     </div>
     <div class="centeredText">
         <h1>Produits:</h1>
     </div>
     <div class="mainProductDiv">
         <ol class="productList">
+            {{range .ProductList}}
             <li>
                 <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
+                    <img class="productImage" src="/images/products/{{.ImageName}}" alt="Produit">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor sit amet</p>
+                        <p class="productName">{{.Nom}}</p>
                         <div class="productPriceNInfo">
-                            <p class="price">1€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
+                            <div class="price-div">
+                                <!--Jsp si la condition dans la class c'est horrible ou un coup de génie mais je refuse de croire que c'est comme ca qu'on est sensé faire-->
+                                <p class="price{{if ne .Reduction "0"}}Reduc{{end}}">{{.Prix}}</p> 
+                                {{if ne .Reduction "0"}}
+                                <p class="reduction">{{.Reduction}}</p>
+                                {{end}}
+                            </div>
+                            <form method="GET" action="/product/{{.Id}}">
+                                <button type="submit" class="selectButton">Consulter</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">consectetur adipiscing</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">1€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Sed do eiusmod tempor</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">1€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor sit amet</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">2€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">consectetur adipiscing</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">2€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Sed do eiusmod tempor</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">2€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor sit amet</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">3€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">consectetur adipiscing</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">3€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Sed do eiusmod tempor</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">3€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor sit amet</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">4€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">consectetur adipiscing</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">4€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Sed do eiusmod tempor</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">4€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor sit amet</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">5€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">consectetur adipiscing</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">5€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Sed do eiusmod tempor</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">5€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-			<li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor sit amet</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">6€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">consectetur adipiscing</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">6€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Sed do eiusmod tempor</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">6€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-			<li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor sit amet</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">7€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">consectetur adipiscing</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">7€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Sed do eiusmod tempor</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">7€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-			<li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor sit amet</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">8€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">consectetur adipiscing</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">8€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Sed do eiusmod tempor</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">8€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-			<li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor sit amet</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">9€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">consectetur adipiscing</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">9€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Sed do eiusmod tempor</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">9€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-			<li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor sit amet</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">10€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">consectetur adipiscing</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">10€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="productDiv">
-                    <img class="productImage" src="placeholder.png" alt="Produit 1">
-                    <div class="productInfo">
-                        <p class="productName">Sed do eiusmod tempor</p>
-                        <div class="productPriceNInfo">
-                            <p class="price">10€</p>
-                            <button class="selectButton" id="product_1">consulter</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
+            {{end}}
         </ol>
     </div>
 </body>
 </html>
+{{end}}

@@ -1,44 +1,46 @@
+{{define "productMgmt"}}
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="productAddStyles.css">
-    <link rel="stylesheet" href="titlebarStyles.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles/productAddStyles.css">
+    <link rel="stylesheet" href="/styles/titlebarStyles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
     <title>Ajout d'un produit</title>
 </head>
 <body>
     <div class="titleBar">
         <div class="titlebarButtonsContainer">
-            <button class="titlebarButton">Produits</button>
-            <button class="titlebarButton">Gestion</button>
+            <button class="titlebarButton" id="titleBar_Index" onclick="window.location.href='/'">Produits</button>
+            <button class="titlebarButton" id="titleBar_productMgmt" onclick="window.location.href='/productMgmt'">Gestion</button>
         </div>
 
-        <img src="logo.png" alt="Logo">
+        <img src="/images/logo/1.png" alt="Logo">
     </div>
 
     <div class="productFormDiv">
-        <h1>Ajouter un produit:</h1>
+        <h1 {{if ne .Error ""}}class="error"{{end}}">{{if ne .Error ""}}{{.Error}}{{else}}Ajouter un produit:{{end}}</h1>
         
-        <form class="productForm">
+        <form class="productForm" action="/productMgmt/newProduct" method="POST">
             <label class="productLabel" for="productName">Nom</label>
-            <input type="text" class="productInput" id="productName" maxlength="37 ">
+            <input name="nom" type="text" class="productInput" id="productName" maxlength="37 ">
 
             <label class="productLabel" for="productDescription">Description</label>
-            <textarea class="productDescriptionTA" rows="3"></textarea>
+            <textarea name="description" class="productDescriptionTA" rows="3"></textarea>
 
             <div class="sizeOptions">
                 <p>Taille</p>
-                <label><input type="radio" id="tailleS" value="S"> S</label>
-                <label><input type="radio" id="tailleM" value="M"> M</label>
-                <label><input type="radio" id="tailleL" value="L"> L</label>
-                <label><input type="radio" id="tailleXL" value="XL"> XL</label>
+                <label><input name="size1" type="radio" id="tailleS" value="S"> S</label>
+                <label><input name="size2" type="radio" id="tailleM" value="M"> M</label>
+                <label><input name="size3" type="radio" id="tailleL" value="L"> L</label>
+                <label><input name="size4" type="radio" id="tailleXL" value="XL"> XL</label>
                 
             </div>
 
             <label class="priceLabel" for="productPrice">Prix: </label>
-            <input type="number" class="priceInput" id="productPrice" min="0" step="1" value="10">
+            <input name="prix" type="number" class="priceInput" id="productPrice" min="0" step="1" value="10">
             
             <button type="submit" class="addButton">Ajouter</button>
         </form>
     </div>
 </body>
 </html>
+{{end}}
