@@ -1,0 +1,76 @@
+/* Div principal, il contient tous les divs des produits */
+.mainProductDiv {
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+/* Liste des produits, la balise est un <ol> */
+.productList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style-type: none;
+    margin-top: 0;
+    justify-content: center;
+    width: 100%;
+}
+
+/*Div d'un produit, la balise est un <div>*/
+.productDiv img {
+    width: 43%;
+    margin: 0;
+    border-radius: 3vmin;
+}
+
+/* Div de l'encart d'un produit, contiens son image, son nom, son prix et son bouton consulter personnel*/
+.productDiv {
+    margin-right: 4vmin;
+    background-color: #444;
+    border-radius: 1vmin;
+    padding: 1vmin;
+    width: 46vmin;
+    height: 13.8vmin;
+    color: #fff;
+    box-shadow: 0 1.08vmin 1.8vmin rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: flex-start;
+    overflow: visible;
+    margin-bottom: 3.5vmin;
+    margin-left: 4vmin;
+  }
+
+/* Div qui contiens les infos du produit (tout ce qui se trouve a droite de l'image concrètement)*/
+.productInfo {
+    margin-left: 2vmin;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Plutot explicite je trouve */
+.productName {
+    margin: 0;
+    text-align: left;
+    font-family: "Helvetica";
+    font-weight: bold;
+}
+
+/* Encart spécial qui contient le prix et son bouton consulter, j'ai du le séparer du nom psq sinon ca marche pas (incompréhensible)*/
+.productPriceNInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: -1vmin;
+  }
+
+  .price {
+    margin-top: 2vmin;
+    font-family: "pricefont";
+    font-size: 2em;
+    margin-bottom: 0vmin;
+  }

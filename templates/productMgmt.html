@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="productAddStyles.css">
+    <link rel="stylesheet" href="titlebarStyles.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ajout d'un produit</title>
+</head>
+<body>
+    <div class="titleBar">
+        <div class="titlebarButtonsContainer">
+            <button class="titlebarButton">Produits</button>
+            <button class="titlebarButton">Gestion</button>
+        </div>
+
+        <img src="logo.png" alt="Logo">
+    </div>
+
+    <div class="productFormDiv">
+        <h1>Ajouter un produit:</h1>
+        
+        <form class="productForm">
+            <label class="productLabel" for="productName">Nom</label>
+            <input type="text" class="productInput" id="productName" maxlength="37 ">
+
+            <label class="productLabel" for="productDescription">Description</label>
+            <textarea class="productDescriptionTA" rows="3"></textarea>
+
+            <div class="sizeOptions">
+                <p>Taille</p>
+                <label><input type="radio" id="tailleS" value="S"> S</label>
+                <label><input type="radio" id="tailleM" value="M"> M</label>
+                <label><input type="radio" id="tailleL" value="L"> L</label>
+                <label><input type="radio" id="tailleXL" value="XL"> XL</label>
+                
+            </div>
+
+            <label class="priceLabel" for="productPrice">Prix: </label>
+            <input type="number" class="priceInput" id="productPrice" min="0" step="1" value="10">
+            
+            <button type="submit" class="addButton">Ajouter</button>
+        </form>
+    </div>
+</body>
+</html>

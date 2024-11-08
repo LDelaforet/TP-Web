@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <head>
+    <link rel="stylesheet" href="productListStyles.css">
+    <link rel="stylesheet" href="titlebarStyles.css">
     <link rel="stylesheet" href="styles.css">
     <title>Home</title>
 </head>
 <body>
+    <div class="titleBar">
+        <div class="titlebarButtonsContainer">
+            <button class="titlebarButton" id="titleBar_Index" >Produits</button>
+            <button class="titlebarButton" id="titleBar_productMgmt" >Gestion</button>
+        </div>
+
+        <img src="logo.png" alt="Logo">
+    </div>
+    <div class="centeredText">
+        <h1>Produits:</h1>
+    </div>
     <div class="mainProductDiv">
         <ol class="productList">
             <li>
                 <div class="productDiv">
                     <img class="productImage" src="placeholder.png" alt="Produit 1">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor</p>
+                        <p class="productName">Lorem ipsum dolor sit amet</p>
                         <div class="productPriceNInfo">
                             <p class="price">1€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -25,7 +38,7 @@
                         <p class="productName">consectetur adipiscing</p>
                         <div class="productPriceNInfo">
                             <p class="price">1€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -37,7 +50,7 @@
                         <p class="productName">Sed do eiusmod tempor</p>
                         <div class="productPriceNInfo">
                             <p class="price">1€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -46,10 +59,10 @@
                 <div class="productDiv">
                     <img class="productImage" src="placeholder.png" alt="Produit 1">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor</p>
+                        <p class="productName">Lorem ipsum dolor sit amet</p>
                         <div class="productPriceNInfo">
                             <p class="price">2€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -61,7 +74,7 @@
                         <p class="productName">consectetur adipiscing</p>
                         <div class="productPriceNInfo">
                             <p class="price">2€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -73,7 +86,7 @@
                         <p class="productName">Sed do eiusmod tempor</p>
                         <div class="productPriceNInfo">
                             <p class="price">2€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -82,10 +95,10 @@
                 <div class="productDiv">
                     <img class="productImage" src="placeholder.png" alt="Produit 1">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor</p>
+                        <p class="productName">Lorem ipsum dolor sit amet</p>
                         <div class="productPriceNInfo">
                             <p class="price">3€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -97,7 +110,7 @@
                         <p class="productName">consectetur adipiscing</p>
                         <div class="productPriceNInfo">
                             <p class="price">3€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -109,7 +122,7 @@
                         <p class="productName">Sed do eiusmod tempor</p>
                         <div class="productPriceNInfo">
                             <p class="price">3€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -118,10 +131,10 @@
                 <div class="productDiv">
                     <img class="productImage" src="placeholder.png" alt="Produit 1">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor</p>
+                        <p class="productName">Lorem ipsum dolor sit amet</p>
                         <div class="productPriceNInfo">
                             <p class="price">4€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -133,7 +146,7 @@
                         <p class="productName">consectetur adipiscing</p>
                         <div class="productPriceNInfo">
                             <p class="price">4€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -145,7 +158,7 @@
                         <p class="productName">Sed do eiusmod tempor</p>
                         <div class="productPriceNInfo">
                             <p class="price">4€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -154,10 +167,10 @@
                 <div class="productDiv">
                     <img class="productImage" src="placeholder.png" alt="Produit 1">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor</p>
+                        <p class="productName">Lorem ipsum dolor sit amet</p>
                         <div class="productPriceNInfo">
                             <p class="price">5€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -169,7 +182,7 @@
                         <p class="productName">consectetur adipiscing</p>
                         <div class="productPriceNInfo">
                             <p class="price">5€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -181,7 +194,7 @@
                         <p class="productName">Sed do eiusmod tempor</p>
                         <div class="productPriceNInfo">
                             <p class="price">5€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -190,10 +203,10 @@
                 <div class="productDiv">
                     <img class="productImage" src="placeholder.png" alt="Produit 1">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor</p>
+                        <p class="productName">Lorem ipsum dolor sit amet</p>
                         <div class="productPriceNInfo">
                             <p class="price">6€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -205,7 +218,7 @@
                         <p class="productName">consectetur adipiscing</p>
                         <div class="productPriceNInfo">
                             <p class="price">6€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -217,7 +230,7 @@
                         <p class="productName">Sed do eiusmod tempor</p>
                         <div class="productPriceNInfo">
                             <p class="price">6€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -226,10 +239,10 @@
                 <div class="productDiv">
                     <img class="productImage" src="placeholder.png" alt="Produit 1">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor</p>
+                        <p class="productName">Lorem ipsum dolor sit amet</p>
                         <div class="productPriceNInfo">
                             <p class="price">7€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -241,7 +254,7 @@
                         <p class="productName">consectetur adipiscing</p>
                         <div class="productPriceNInfo">
                             <p class="price">7€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -253,7 +266,7 @@
                         <p class="productName">Sed do eiusmod tempor</p>
                         <div class="productPriceNInfo">
                             <p class="price">7€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -263,10 +276,10 @@
                 <div class="productDiv">
                     <img class="productImage" src="placeholder.png" alt="Produit 1">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor</p>
+                        <p class="productName">Lorem ipsum dolor sit amet</p>
                         <div class="productPriceNInfo">
                             <p class="price">8€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -278,7 +291,7 @@
                         <p class="productName">consectetur adipiscing</p>
                         <div class="productPriceNInfo">
                             <p class="price">8€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -290,7 +303,7 @@
                         <p class="productName">Sed do eiusmod tempor</p>
                         <div class="productPriceNInfo">
                             <p class="price">8€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -300,10 +313,10 @@
                 <div class="productDiv">
                     <img class="productImage" src="placeholder.png" alt="Produit 1">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor</p>
+                        <p class="productName">Lorem ipsum dolor sit amet</p>
                         <div class="productPriceNInfo">
                             <p class="price">9€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -315,7 +328,7 @@
                         <p class="productName">consectetur adipiscing</p>
                         <div class="productPriceNInfo">
                             <p class="price">9€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -327,7 +340,7 @@
                         <p class="productName">Sed do eiusmod tempor</p>
                         <div class="productPriceNInfo">
                             <p class="price">9€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -337,10 +350,10 @@
                 <div class="productDiv">
                     <img class="productImage" src="placeholder.png" alt="Produit 1">
                     <div class="productInfo">
-                        <p class="productName">Lorem ipsum dolor</p>
+                        <p class="productName">Lorem ipsum dolor sit amet</p>
                         <div class="productPriceNInfo">
                             <p class="price">10€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -352,7 +365,7 @@
                         <p class="productName">consectetur adipiscing</p>
                         <div class="productPriceNInfo">
                             <p class="price">10€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>
@@ -364,7 +377,7 @@
                         <p class="productName">Sed do eiusmod tempor</p>
                         <div class="productPriceNInfo">
                             <p class="price">10€</p>
-                            <button class="consult-button">consulter</button>
+                            <button class="selectButton" id="product_1">consulter</button>
                         </div>
                     </div>
                 </div>

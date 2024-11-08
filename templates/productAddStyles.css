@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+/* Div qui contient le form d'in */
+.productFormDiv {
+    border: 0.5vmin solid black;
+    border-radius: 2vmin;
+    padding: 3vmin;
+    width: 60vmin;
+    margin-top: 8vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Le h1 dans productFormDiv */
+.productFormDiv h1 {
+    font-size: 4vmin;
+    margin-bottom: 3vmin;
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 4vmin;
+}
+
+/* Le form d'input de produit' */
+.productForm {
+    display: flex;
+    flex-direction: column;
+    gap: 2vmin;
+    width: 100%;
+}
+
+/* Les labels dans le form */
+.productForm label {
+    width: 20%;
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 2vmin;
+}
+
+/* Le label de prix */
+.priceLabel {
+    margin-left: 1vmin;
+    color: #444;
+    margin-left: 23vmin;
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 2vmin;
+}
+
+/* Boite d'input du prix */
+.priceInput {
+    width: 20%;
+    margin-left: 20vmin;
+}
+
+/* Boite d'input de produit et TA de description du produit */
+.productInput, .productDescriptionTA {
+    width: 90%;
+    padding: 1.5vmin;
+    border: 0.3vmin solid #ccc;
+    border-radius: 1vmin;
+    font-size: 2vmin;
+    margin-left: 1vmin;
+}
+
+/* Options de taille disponibles */
+.sizeOptions {
+    display: flex;
+    gap: 8vmin;
+    align-items: center;
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 2vmin;
+}
+
+/* Les p dans sizeOptions */
+.sizeOptions p {
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 2vmin;
+}
+
+/* Bouton d'ajout de produit */
+.addButton {
+    background-color: #D41B19;
+    color: white;
+    border: none;
+    padding: 2vmin;
+    border-radius: 3vmin;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 2.5vmin;
+    transition: background-color 0.3s;
+    margin-top: 3vmin;
+}
+
+/* Quand on hover le bouton */
+.addButton:hover {
+    background-color: #B3201C;
+}
+
+/* Quand on clique sur le bouton */
+.addButton:active {
+    background-color: #8F0F12;
+}
